@@ -10,11 +10,11 @@ import java.io.IOException;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class EfoApplicationTest {
+public class FssSApplicationTest {
 
     public static void setSettings() {
         try {
-            EfoApplication.settings = new JsonParser(EfoApplicationTest.class.getResource("/config.json"));
+            FssSApplication.settings = new JsonParser(FssSApplicationTest.class.getResource("/config.json"));
         } catch (IOException e) {
             e.printStackTrace();
         }

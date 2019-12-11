@@ -7,7 +7,7 @@ import cn.BsKPLu.FssS.service.IFileService;
 import cn.BsKPLu.FssS.util.ControllerUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import cn.BsKPLu.FssS.EfoApplication;
+import cn.BsKPLu.FssS.FssSApplication;
 import cn.BsKPLu.FssS.annotation.AuthInterceptor;
 import cn.BsKPLu.FssS.util.BeanUtils;
 import com.zhazhapan.modules.constant.ValueConsts;
@@ -28,8 +28,8 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @author pantao
- * @since 2018/1/29
+ * @author BsKPLu
+ * @since 2019/11/29
  */
 @RestController
 @RequestMapping("/file")
@@ -90,7 +90,7 @@ public class FileController {
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public String getAll(int offset, int categoryId, String orderBy, String search) {
         User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
-        boolean canGet = EfoApplication.settings.getBooleanUseEval(ConfigConsts.ANONYMOUS_VISIBLE_OF_SETTING) ||
+        boolean canGet = FssSApplication.settings.getBooleanUseEval(ConfigConsts.ANONYMOUS_VISIBLE_OF_SETTING) ||
                 (Checker.isNotNull(user) && user.getIsVisible() == 1);
         if (canGet) {
             int userId = Checker.isNull(user) ? 0 : user.getId();

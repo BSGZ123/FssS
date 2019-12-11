@@ -24,7 +24,7 @@ import java.util.List;
 @EnableSwagger2Doc
 @MapperScan("cn.BsKPLu.FssS.dao")
 @EnableTransactionManagement
-public class EfoApplication {
+public class FssSApplication {
 
     public static JsonParser settings = new JsonParser();
 
@@ -33,10 +33,10 @@ public class EfoApplication {
     public static Hashtable<String, Integer> tokens;
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        settings.setJsonObject(FileExecutor.read(EfoApplication.class.getResourceAsStream(DefaultValues.SETTING_PATH)));
+        settings.setJsonObject(FileExecutor.read(FssSApplication.class.getResourceAsStream(DefaultValues.SETTING_PATH)));
         MailSender.config(settings.getObjectUseEval(ConfigConsts.EMAIL_CONFIG_OF_SETTINGS));
         controllers = ReflectUtils.getClasses(DefaultValues.CONTROLLER_PACKAGE);
         tokens = TokenConfig.loadToken();
-        SpringApplication.run(EfoApplication.class, args);
+        SpringApplication.run(FssSApplication.class, args);
     }
 }

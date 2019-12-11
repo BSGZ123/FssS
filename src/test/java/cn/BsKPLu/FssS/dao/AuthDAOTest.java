@@ -1,6 +1,6 @@
 package cn.BsKPLu.FssS.dao;
 
-import cn.BsKPLu.FssS.EfoApplicationTest;
+import cn.BsKPLu.FssS.FssSApplicationTest;
 import com.zhazhapan.util.Formatter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class AuthDAOTest {
 
     static {
-        EfoApplicationTest.setSettings();
+        FssSApplicationTest.setSettings();
     }
 
     @Autowired

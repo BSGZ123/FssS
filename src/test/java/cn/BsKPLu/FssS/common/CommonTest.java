@@ -1,8 +1,8 @@
 package cn.BsKPLu.FssS.common;
 
 import cn.BsKPLu.FssS.modules.constant.ConfigConsts;
-import cn.BsKPLu.FssS.EfoApplication;
-import cn.BsKPLu.FssS.EfoApplicationTest;
+import cn.BsKPLu.FssS.FssSApplication;
+import cn.BsKPLu.FssS.FssSApplicationTest;
 import com.zhazhapan.util.FileExecutor;
 import com.zhazhapan.util.Formatter;
 import com.zhazhapan.util.MailSender;
@@ -19,8 +19,8 @@ public class CommonTest {
 
     @Test
     public void testSendEmail() throws Exception {
-        EfoApplicationTest.setSettings();
-        MailSender.config(EfoApplication.settings.getObjectUseEval(ConfigConsts.EMAIL_CONFIG_OF_SETTINGS));
+        FssSApplicationTest.setSettings();
+        MailSender.config(FssSApplication.settings.getObjectUseEval(ConfigConsts.EMAIL_CONFIG_OF_SETTINGS));
         MailSender.sendMail("tao@zhazhapan.com", "test", "test");
     }
 

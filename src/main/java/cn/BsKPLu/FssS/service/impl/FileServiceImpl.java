@@ -2,7 +2,7 @@ package cn.BsKPLu.FssS.service.impl;
 
 import cn.BsKPLu.FssS.service.IAuthService;
 import cn.BsKPLu.FssS.service.IFileService;
-import cn.BsKPLu.FssS.EfoApplication;
+import cn.BsKPLu.FssS.FssSApplication;
 import cn.BsKPLu.FssS.config.SettingConfig;
 import cn.BsKPLu.FssS.dao.DownloadedDAO;
 import cn.BsKPLu.FssS.dao.FileDAO;
@@ -134,7 +134,7 @@ public class FileServiceImpl implements IFileService {
             AuthRecord authRecord = authService.getByFileIdAndUserId(id, user.getId());
             String suffix = FileExecutor.getFileSuffix(name);
             boolean canUpdate = (Checker.isNull(authRecord) ? user.getIsUpdatable() == 1 :
-                    authRecord.getIsUpdatable() == 1) && Checker.isNotEmpty(name) && Pattern.compile(EfoApplication.settings.getStringUseEval(ConfigConsts.FILE_SUFFIX_MATCH_OF_SETTING)).matcher(suffix).matches();
+                    authRecord.getIsUpdatable() == 1) && Checker.isNotEmpty(name) && Pattern.compile(FssSApplication.settings.getStringUseEval(ConfigConsts.FILE_SUFFIX_MATCH_OF_SETTING)).matcher(suffix).matches();
             if (canUpdate) {
                 String localUrl = file.getLocalUrl();
                 java.io.File newFile = new java.io.File(localUrl);
@@ -208,7 +208,7 @@ public class FileServiceImpl implements IFileService {
     @Override
     public String getResource(String visitUrl, HttpServletRequest request) {
         logger.info("visit url: " + visitUrl);
-        boolean downloadable = EfoApplication.settings.getBooleanUseEval(ConfigConsts
+        boolean downloadable = FssSApplication.settings.getBooleanUseEval(ConfigConsts
                 .ANONYMOUS_DOWNLOADABLE_OF_SETTING);
         User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
         File file = fileDAO.getFileByVisitUrl(visitUrl);
@@ -249,15 +249,15 @@ public class FileServiceImpl implements IFileService {
             String suffix = FileExecutor.getFileSuffix(name);
             String localUrl = SettingConfig.getUploadStoragePath() + ValueConsts.SEPARATOR + name;
             Category category = categoryService.getById(categoryId);
-            long maxSize = Formatter.sizeToLong(EfoApplication.settings.getStringUseEval(ConfigConsts
+            long maxSize = Formatter.sizeToLong(FssSApplication.settings.getStringUseEval(ConfigConsts
                     .FILE_MAX_SIZE_OF_SETTING));
             long size = multipartFile.getSize();
             boolean fileExists = localUrlExists(localUrl);
             //检测标签是否合法
-            if (EfoApplication.settings.getBooleanUseEval(ConfigConsts.TAG_REQUIRE_OF_SETTING)) {
+            if (FssSApplication.settings.getBooleanUseEval(ConfigConsts.TAG_REQUIRE_OF_SETTING)) {
                 String[] tags = Checker.checkNull(tag).split(ValueConsts.SPACE);
-                if (tags.length <= EfoApplication.settings.getIntegerUseEval(ConfigConsts.TAG_SIZE_OF_SETTING)) {
-                    int maxLength = EfoApplication.settings.getIntegerUseEval(ConfigConsts.TAG_LENGTH_OF_SETTING);
+                if (tags.length <= FssSApplication.settings.getIntegerUseEval(ConfigConsts.TAG_SIZE_OF_SETTING)) {
+                    int maxLength = FssSApplication.settings.getIntegerUseEval(ConfigConsts.TAG_LENGTH_OF_SETTING);
                     for (String t : tags) {
                         if (t.length() > maxLength) {
                             return false;
@@ -268,15 +268,15 @@ public class FileServiceImpl implements IFileService {
                 }
             }
             //是否可以上传
-            boolean canUpload = !multipartFile.isEmpty() && size <= maxSize && Pattern.compile(EfoApplication
+            boolean canUpload = !multipartFile.isEmpty() && size <= maxSize && Pattern.compile(FssSApplication
                     .settings.getStringUseEval(ConfigConsts.FILE_SUFFIX_MATCH_OF_SETTING)).matcher(suffix).matches()
-                    && (Checker.isNotExists(localUrl) || !fileExists || EfoApplication.settings.getBooleanUseEval
+                    && (Checker.isNotExists(localUrl) || !fileExists || FssSApplication.settings.getBooleanUseEval
                     (ConfigConsts.FILE_COVER_OF_SETTING));
             logger.info("is empty [" + multipartFile.isEmpty() + "], file size [" + size + "], max file size [" +
                     maxSize + "]");
             if (canUpload) {
                 String visitUrl = getRegularVisitUrl(Checker.isNotEmpty(prefix) && user.getPermission() > 1 ? prefix
-                        : EfoApplication.settings.getStringUseEval(ConfigConsts.CUSTOM_LINK_RULE_OF_SETTING), user,
+                        : FssSApplication.settings.getStringUseEval(ConfigConsts.CUSTOM_LINK_RULE_OF_SETTING), user,
                         name, suffix, category);
                 if (fileExists) {
                     removeByLocalUrl(localUrl);

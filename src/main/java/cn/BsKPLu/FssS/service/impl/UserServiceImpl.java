@@ -1,7 +1,7 @@
 package cn.BsKPLu.FssS.service.impl;
 
 import cn.BsKPLu.FssS.service.IUserService;
-import cn.BsKPLu.FssS.EfoApplication;
+import cn.BsKPLu.FssS.FssSApplication;
 import cn.BsKPLu.FssS.config.SettingConfig;
 import cn.BsKPLu.FssS.config.TokenConfig;
 import cn.BsKPLu.FssS.dao.UserDAO;
@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import static cn.BsKPLu.FssS.EfoApplication.settings;
+import static cn.BsKPLu.FssS.FssSApplication.settings;
 
 /**
  * @author pantao
@@ -72,8 +72,8 @@ public class UserServiceImpl implements IUserService {
         boolean allowLogin = settings.getBooleanUseEval(ConfigConsts.ALLOW_LOGIN_OF_SETTINGS);
         User user = null;
         if (allowLogin) {
-            if (Checker.isNotEmpty(token) && EfoApplication.tokens.containsKey(token)) {
-                user = userDAO.getUserById(EfoApplication.tokens.get(token));
+            if (Checker.isNotEmpty(token) && FssSApplication.tokens.containsKey(token)) {
+                user = userDAO.getUserById(FssSApplication.tokens.get(token));
                 if (Checker.isNotNull(response)) {
                     Cookie cookie = new Cookie(ValueConsts.TOKEN_STRING, TokenConfig.generateToken(token, user.getId
                             ()));

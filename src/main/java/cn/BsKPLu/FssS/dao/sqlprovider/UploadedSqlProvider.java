@@ -1,7 +1,7 @@
 package cn.BsKPLu.FssS.dao.sqlprovider;
 
 import cn.BsKPLu.FssS.modules.constant.ConfigConsts;
-import cn.BsKPLu.FssS.EfoApplication;
+import cn.BsKPLu.FssS.FssSApplication;
 import com.zhazhapan.util.Checker;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.jdbc.SQL;
@@ -39,9 +39,9 @@ public class UploadedSqlProvider {
             if (categoryId > 0) {
                 WHERE("c.id=#{categoryId}");
             }
-            ORDER_BY("f." + EfoApplication.settings.getStringUseEval(ConfigConsts.FILE_ORDER_BY_OF_SETTING));
+            ORDER_BY("f." + FssSApplication.settings.getStringUseEval(ConfigConsts.FILE_ORDER_BY_OF_SETTING));
         }}.toString();
-        int size = EfoApplication.settings.getIntegerUseEval(ConfigConsts.FILE_PAGE_SIZE_OF_SETTING);
+        int size = FssSApplication.settings.getIntegerUseEval(ConfigConsts.FILE_PAGE_SIZE_OF_SETTING);
         return sql + " limit " + (offset * size) + "," + size;
     }
 }

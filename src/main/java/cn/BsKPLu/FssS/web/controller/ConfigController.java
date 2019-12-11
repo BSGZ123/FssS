@@ -4,7 +4,7 @@ import cn.BsKPLu.FssS.entity.User;
 import cn.BsKPLu.FssS.enums.InterceptorLevel;
 import cn.BsKPLu.FssS.modules.constant.DefaultValues;
 import cn.BsKPLu.FssS.service.IConfigService;
-import cn.BsKPLu.FssS.EfoApplication;
+import cn.BsKPLu.FssS.FssSApplication;
 import cn.BsKPLu.FssS.annotation.AuthInterceptor;
 import com.zhazhapan.modules.constant.ValueConsts;
 import com.zhazhapan.util.FileExecutor;
@@ -49,11 +49,11 @@ public class ConfigController {
     public String updateConfig(String config) {
         User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
         if (user.getPermission() > ValueConsts.TWO_INT) {
-            EfoApplication.settings.setJsonObject(config);
+            FssSApplication.settings.setJsonObject(config);
             //打包成jar之后无法修改config.json文件
             try {
-                FileExecutor.saveFile(NetUtils.urlToString(EfoApplication.class.getResource(DefaultValues
-                        .SETTING_PATH)), EfoApplication.settings.toString());
+                FileExecutor.saveFile(NetUtils.urlToString(FssSApplication.class.getResource(DefaultValues
+                        .SETTING_PATH)), FssSApplication.settings.toString());
             } catch (IOException e) {
                 logger.error(e.getMessage());
                 return "{\"message\":\"internal error, cannot save\"}";
@@ -70,7 +70,7 @@ public class ConfigController {
     public String getAll() {
         User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
         if (user.getPermission() > ValueConsts.TWO_INT) {
-            return EfoApplication.settings.toString();
+            return FssSApplication.settings.toString();
         } else {
             return "{\"message\":\"permission denied\"}";
         }

@@ -1,6 +1,6 @@
 package cn.BsKPLu.FssS.dao;
 
-import cn.BsKPLu.FssS.EfoApplicationTest;
+import cn.BsKPLu.FssS.FssSApplicationTest;
 import cn.BsKPLu.FssS.entity.User;
 import com.zhazhapan.util.Checker;
 import com.zhazhapan.util.Formatter;
@@ -20,7 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class UserDAOTest {
 
     static {
-        EfoApplicationTest.setSettings();
+        FssSApplicationTest.setSettings();
     }
 
     @Autowired

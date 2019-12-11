@@ -1,7 +1,7 @@
 package cn.BsKPLu.FssS.dao.sqlprovider;
 
 import cn.BsKPLu.FssS.modules.constant.ConfigConsts;
-import cn.BsKPLu.FssS.EfoApplication;
+import cn.BsKPLu.FssS.FssSApplication;
 import com.zhazhapan.util.Checker;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.jdbc.SQL;
@@ -40,9 +40,9 @@ public class AuthSqlProvider {
             } else if (Checker.isNotEmpty(fileName)) {
                 WHERE("f.local_url like '%" + fileName + "%'");
             }
-            ORDER_BY("a." + EfoApplication.settings.getStringUseEval(ConfigConsts.AUTH_ORDER_BY_OF_SETTINGS));
+            ORDER_BY("a." + FssSApplication.settings.getStringUseEval(ConfigConsts.AUTH_ORDER_BY_OF_SETTINGS));
         }}.toString();
-        int size = EfoApplication.settings.getIntegerUseEval(ConfigConsts.AUTH_PAGE_SIZE_OF_SETTINGS);
+        int size = FssSApplication.settings.getIntegerUseEval(ConfigConsts.AUTH_PAGE_SIZE_OF_SETTINGS);
         return sql + " limit " + (offset * size) + "," + size;
     }
 }

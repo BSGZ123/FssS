@@ -9,7 +9,7 @@ import cn.BsKPLu.FssS.service.IUserService;
 import cn.BsKPLu.FssS.util.ControllerUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import cn.BsKPLu.FssS.EfoApplication;
+import cn.BsKPLu.FssS.FssSApplication;
 import cn.BsKPLu.FssS.annotation.AuthInterceptor;
 import com.zhazhapan.modules.constant.ValueConsts;
 import com.zhazhapan.util.Checker;
@@ -100,7 +100,7 @@ public class UserController {
     public String updateBasicInfo(String avatar, String realName, String email, String code) {
         User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
         jsonObject.put("message", "保存成功");
-        boolean emilVerify = EfoApplication.settings.getBooleanUseEval(ConfigConsts.EMAIL_VERIFY_OF_SETTINGS);
+        boolean emilVerify = FssSApplication.settings.getBooleanUseEval(ConfigConsts.EMAIL_VERIFY_OF_SETTINGS);
         if (Checker.isNotEmpty(email) && !email.equals(user.getEmail())) {
             if (!emilVerify || isCodeValidate(code)) {
                 if (userService.emailExists(email)) {
@@ -190,7 +190,7 @@ public class UserController {
     @AuthInterceptor(InterceptorLevel.NONE)
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String register(String username, String email, String password, String code) {
-        boolean emilVerify = EfoApplication.settings.getBooleanUseEval(ConfigConsts.EMAIL_VERIFY_OF_SETTINGS);
+        boolean emilVerify = FssSApplication.settings.getBooleanUseEval(ConfigConsts.EMAIL_VERIFY_OF_SETTINGS);
         jsonObject.put("status", "error");
         if (!emilVerify || isCodeValidate(code)) {
             if (userService.usernameExists(username)) {

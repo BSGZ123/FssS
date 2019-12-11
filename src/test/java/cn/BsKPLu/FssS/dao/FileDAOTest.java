@@ -1,6 +1,6 @@
 package cn.BsKPLu.FssS.dao;
 
-import cn.BsKPLu.FssS.EfoApplicationTest;
+import cn.BsKPLu.FssS.FssSApplicationTest;
 import com.zhazhapan.util.Formatter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +26,7 @@ public class FileDAOTest {
 
     @Test
     public void testGetUserDownloaded() {
-        EfoApplicationTest.setSettings();
+        FssSApplicationTest.setSettings();
         System.out.println(Formatter.listToJson(fileDAO.listUserDownloaded(2, 0, "")));
     }
 }

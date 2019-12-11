@@ -1,6 +1,6 @@
 package cn.BsKPLu.FssS.dao.sqlprovider;
 
-import cn.BsKPLu.FssS.EfoApplicationTest;
+import cn.BsKPLu.FssS.FssSApplicationTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class FileSqlProviderTest {
 
     @Test
     public void getAll() {
-        EfoApplicationTest.setSettings();
+        FssSApplicationTest.setSettings();
         System.out.println(fileSqlProvider.getAll(0, 0, "", ""));
     }
 

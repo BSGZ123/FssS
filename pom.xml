@@ -99,7 +99,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <fork>true</fork>
-                    <mainClass>cn.BsKPLu.FssS.EfoApplication</mainClass>
+                    <mainClass>cn.BsKPLu.FssS.FssSApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
@@ -116,7 +116,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>cn.BsKPLu.FssS.EfoApplication</mainClass>sjfh
+                            <mainClass>cn.BsKPLu.FssS.FssSApplication</mainClass>sjfh
                         </manifest>
                     </archive>
                     <descriptorRefs>

@@ -1,7 +1,7 @@
 package cn.BsKPLu.FssS.config;
 
 import cn.BsKPLu.FssS.modules.constant.ConfigConsts;
-import cn.BsKPLu.FssS.EfoApplication;
+import cn.BsKPLu.FssS.FssSApplication;
 import cn.BsKPLu.FssS.util.CommonUtils;
 import com.zhazhapan.modules.constant.ValueConsts;
 import com.zhazhapan.util.Checker;
@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 
-import static cn.BsKPLu.FssS.EfoApplication.settings;
+import static cn.BsKPLu.FssS.FssSApplication.settings;
 
 /**
  * @author BsKPLu
@@ -51,7 +51,7 @@ public class SettingConfig {
 
     public static String getUploadStoragePath() {
         String parent = getStoragePath(ConfigConsts.UPLOAD_PATH_OF_SETTING);
-        String formatWay = EfoApplication.settings.getStringUseEval(ConfigConsts.UPLOAD_FORM_OF_SETTING);
+        String formatWay = FssSApplication.settings.getStringUseEval(ConfigConsts.UPLOAD_FORM_OF_SETTING);
         String childPath = ValueConsts.SEPARATOR + Formatter.datetimeToCustomString(new Date(), formatWay);
         String path = parent + childPath;
         if (!FileExecutor.createFolder(path)) {
@@ -77,7 +77,7 @@ public class SettingConfig {
         } else {
             path += LINUX;
         }
-        return CommonUtils.checkPath(EfoApplication.settings.getStringUseEval(path));
+        return CommonUtils.checkPath(FssSApplication.settings.getStringUseEval(path));
     }
 
     /**

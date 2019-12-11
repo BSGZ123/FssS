@@ -2,7 +2,7 @@ package cn.BsKPLu.FssS.dao.sqlprovider;
 
 import cn.BsKPLu.FssS.modules.constant.ConfigConsts;
 import cn.BsKPLu.FssS.modules.constant.DefaultValues;
-import cn.BsKPLu.FssS.EfoApplication;
+import cn.BsKPLu.FssS.FssSApplication;
 import com.zhazhapan.util.Checker;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.jdbc.SQL;
@@ -33,9 +33,9 @@ public class UserSqlProvider {
                 WHERE("username like '%" + condition + "%' or email like '%" + condition + "%' or real_name like '" +
                         condition + "'");
             }
-            ORDER_BY(EfoApplication.settings.getStringUseEval(ConfigConsts.USER_ORDER_BY_OF_SETTINGS));
+            ORDER_BY(FssSApplication.settings.getStringUseEval(ConfigConsts.USER_ORDER_BY_OF_SETTINGS));
         }}.toString();
-        int size = EfoApplication.settings.getIntegerUseEval(ConfigConsts.USER_PAGE_SIZE_OF_SETTINGS);
+        int size = FssSApplication.settings.getIntegerUseEval(ConfigConsts.USER_PAGE_SIZE_OF_SETTINGS);
         return sql + " limit " + (offset * size) + "," + size;
     }
 }

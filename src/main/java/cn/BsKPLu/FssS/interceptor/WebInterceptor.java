@@ -4,7 +4,7 @@ import cn.BsKPLu.FssS.entity.User;
 import cn.BsKPLu.FssS.enums.InterceptorLevel;
 import cn.BsKPLu.FssS.modules.constant.DefaultValues;
 import cn.BsKPLu.FssS.service.impl.UserServiceImpl;
-import cn.BsKPLu.FssS.EfoApplication;
+import cn.BsKPLu.FssS.FssSApplication;
 import cn.BsKPLu.FssS.annotation.AuthInterceptor;
 import com.zhazhapan.modules.constant.ValueConsts;
 import com.zhazhapan.util.Checker;
@@ -36,7 +36,7 @@ public class WebInterceptor implements HandlerInterceptor {
             AuthInterceptor interceptor = ((HandlerMethod) handler).getMethodAnnotation(AuthInterceptor.class);
             //注解到类上面的注解，无法直接获取，只能通过扫描
             if (Checker.isNull(interceptor)) {
-                for (Class<?> type : EfoApplication.controllers) {
+                for (Class<?> type : FssSApplication.controllers) {
                     RequestMapping mapping = type.getAnnotation(RequestMapping.class);
                     if (Checker.isNotNull(mapping)) {
                         for (String path : mapping.value()) {
