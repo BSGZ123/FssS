@@ -8,7 +8,7 @@ import cn.BsKPLu.FssS.FssSApplication;
 import cn.BsKPLu.FssS.annotation.AuthInterceptor;
 import com.zhazhapan.modules.constant.ValueConsts;
 import com.zhazhapan.util.Checker;
-import com.zhazhapan.util.HttpUtils;
+import com.zhazhapan.util.NetUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.method.HandlerMethod;
@@ -56,7 +56,7 @@ public class WebInterceptor implements HandlerInterceptor {
         User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
         if (Checker.isNull(user)) {
             //读取token，自动登录
-            Cookie cookie = HttpUtils.getCookie(ValueConsts.TOKEN_STRING, request.getCookies());
+            Cookie cookie = NetUtils.getCookie(ValueConsts.TOKEN_STRING, request.getCookies());
             if (Checker.isNotNull(cookie)) {
                 user = userService.login(ValueConsts.EMPTY_STRING, ValueConsts.EMPTY_STRING, cookie.getValue(),
                         response);

@@ -1,63 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c787616-8edb-455b-8aab-f5807ffa055d" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="5c787616-8edb-455b-8aab-f5807ffa055d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/EfoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/FssSApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/config/SettingConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/config/SettingConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/config/TokenConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/config/TokenConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/dao/sqlprovider/AuthSqlProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/dao/sqlprovider/AuthSqlProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/dao/sqlprovider/DownloadedSqlProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/dao/sqlprovider/DownloadedSqlProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/dao/sqlprovider/UploadedSqlProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/dao/sqlprovider/UploadedSqlProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/dao/sqlprovider/UserSqlProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/dao/sqlprovider/UserSqlProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/interceptor/WebInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/interceptor/WebInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/service/impl/ConfigServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/service/impl/ConfigServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/service/impl/FileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/web/controller/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/web/controller/ConfigController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/web/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/web/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/BsKPLu/FssS/web/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/EfoApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/FssSApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/common/CommonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/common/CommonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/config/SettingConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/config/SettingConfigTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/dao/AuthDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/dao/AuthDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/dao/DownloadedDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/dao/DownloadedDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/dao/FileDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/dao/FileDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/dao/UserDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/dao/UserDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/EfoApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/config/SettingConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/config/SettingConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/config/TokenConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/config/TokenConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/AuthSqlProvider$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/AuthSqlProvider$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/AuthSqlProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/AuthSqlProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/DownloadedSqlProvider$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/DownloadedSqlProvider$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/DownloadedSqlProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/DownloadedSqlProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProvider$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProvider$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/UploadedSqlProvider$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/UploadedSqlProvider$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/UploadedSqlProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/UploadedSqlProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/UserSqlProvider$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/UserSqlProvider$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/UserSqlProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/UserSqlProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/interceptor/WebInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/interceptor/WebInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/ConfigServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/ConfigServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/FileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/FileServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/ConfigController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/ConfigController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/EfoApplicationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/common/CommonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/common/CommonTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/config/SettingConfigTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/config/SettingConfigTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/AuthDAOTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/AuthDAOTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/DownloadedDAOTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/DownloadedDAOTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/FileDAOTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/FileDAOTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/UserDAOTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/UserDAOTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProviderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProviderTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-prod.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/css/angular-filemanager.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/css/fileinput.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/css/fontawesome-all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/css/glyphicons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/css/nav.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/css/old/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/css/pretty-checkbox.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/glyphicons-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/glyphicons-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/glyphicons-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/glyphicons-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/fonts/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/img/FssS-favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/img/default-user.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/img/loading-sm.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/img/mini.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/angular-filemanager.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/angular-translate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/angular.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/default.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/fileinput.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/jquery-3.3.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/layer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/mobile/layer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/mobile/need/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/nav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/ng-file-upload.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/old/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/old/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/particles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/particles.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/piexif.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/polyfill.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/purify.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/signin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/sortable.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/theme/default/icon-ext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/theme/default/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/theme/default/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/theme/default/loading-0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/theme/default/loading-1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/theme/default/loading-2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/upload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/js/vue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/annotation/AuthInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/config/SettingConfig$OsName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/config/SettingConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/config/TokenConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/config/WebMvcConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/AuthDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/CategoryDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/DownloadedDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/FileDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/UploadedDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/AuthSqlProvider$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/AuthSqlProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/CommonSqlProvider$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/CommonSqlProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/DownloadedSqlProvider$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/DownloadedSqlProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProvider$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProvider$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/UploadedSqlProvider$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/UploadedSqlProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/UserSqlProvider$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/dao/sqlprovider/UserSqlProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/entity/Auth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/entity/Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/entity/Download.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/entity/File.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/enums/InterceptorLevel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/interceptor/WebInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/model/AuthRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/model/BaseAuthRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/model/DownloadRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/model/FileBasicRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/model/FileRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/model/UploadedRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/modules/constant/ConfigConsts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/modules/constant/DefaultValues.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/IAuthService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/ICategoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/ICommonService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/IConfigService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/IDownloadedService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/IFileManagerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/IFileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/IUploadedService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/IUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/AuthServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/CategoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/CommonServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/ConfigServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/DownloadedServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/FileManagerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/FileServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/UploadedServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/util/BeanUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/util/CommonUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/util/ControllerUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/util/ServiceUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/CategoryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/CommonController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/ConfigController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/CustomErrorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/DownloadedController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/FileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/FileMangerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/UploadedController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/BsKPLu/FssS/web/controller/ViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/filemanager.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/signin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/common/CommonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/config/SettingConfigTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/AuthDAOTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/CategoryDAOTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/DownloadedDAOTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/FileDAOTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/UserDAOTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/dao/sqlprovider/FileSqlProviderTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/BsKPLu/FssS/service/CategoryServiceTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +303,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -234,7 +355,9 @@
       <workItem from="1575946137044" duration="1687000" />
       <workItem from="1575951238301" duration="3918000" />
       <workItem from="1576036916182" duration="3459000" />
-      <workItem from="1576056896950" duration="2262000" />
+      <workItem from="1576056896950" duration="4793000" />
+      <workItem from="1576130194191" duration="1031000" />
+      <workItem from="1576149445140" duration="2275000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1575951896685</created>
@@ -257,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576061904614</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="test">
+      <created>1576063324345</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1576063324345</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,10 +460,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="350" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1576062679662" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1576062745252">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1576063318934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576062745252" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576063318934" />
     <state x="499" y="119" key="EnvironmentVariablesDialog" timestamp="1575952442863">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -346,38 +476,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="553" y="315" width="382" height="173" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1575951365002" />
-    <state width="1135" height="102" key="GridCell.Tab.0.bottom" timestamp="1576063288424">
+    <state width="1135" height="102" key="GridCell.Tab.0.bottom" timestamp="1576151311897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1135" height="102" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576063288424" />
-    <state width="1135" height="102" key="GridCell.Tab.0.center" timestamp="1576063288424">
+    <state width="1135" height="102" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576151311897" />
+    <state width="1135" height="102" key="GridCell.Tab.0.center" timestamp="1576151311896">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1135" height="102" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576063288424" />
-    <state width="1135" height="102" key="GridCell.Tab.0.left" timestamp="1576063288424">
+    <state width="1135" height="102" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576151311896" />
+    <state width="1135" height="102" key="GridCell.Tab.0.left" timestamp="1576151311896">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1135" height="102" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576063288424" />
-    <state width="1135" height="102" key="GridCell.Tab.0.right" timestamp="1576063288424">
+    <state width="1135" height="102" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576151311896" />
+    <state width="1135" height="102" key="GridCell.Tab.0.right" timestamp="1576151311896">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1135" height="102" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576063288424" />
-    <state width="1135" height="102" key="GridCell.Tab.1.bottom" timestamp="1576063288424">
+    <state width="1135" height="102" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576151311896" />
+    <state width="1135" height="102" key="GridCell.Tab.1.bottom" timestamp="1576151311897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1135" height="102" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576063288424" />
-    <state width="1135" height="102" key="GridCell.Tab.1.center" timestamp="1576063288424">
+    <state width="1135" height="102" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576151311897" />
+    <state width="1135" height="102" key="GridCell.Tab.1.center" timestamp="1576151311897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1135" height="102" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1576063288424" />
-    <state width="1135" height="102" key="GridCell.Tab.1.left" timestamp="1576063288424">
+    <state width="1135" height="102" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1576151311897" />
+    <state width="1135" height="102" key="GridCell.Tab.1.left" timestamp="1576151311897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1135" height="102" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1576063288424" />
-    <state width="1135" height="102" key="GridCell.Tab.1.right" timestamp="1576063288424">
+    <state width="1135" height="102" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1576151311897" />
+    <state width="1135" height="102" key="GridCell.Tab.1.right" timestamp="1576151311897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1135" height="102" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1576063288424" />
+    <state width="1135" height="102" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1576151311897" />
     <state x="266" y="0" key="SettingsEditor" timestamp="1575952444322">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -386,10 +516,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="478" y="137" width="540" height="524" key="StructurePopup/0.0.1536.824@0.0.1536.824" timestamp="1575952253010" />
-    <state x="349" y="152" key="Vcs.Push.Dialog.v2" timestamp="1576061916830">
+    <state x="349" y="152" key="Vcs.Push.Dialog.v2" timestamp="1576063335230">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="349" y="152" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1576061916830" />
+    <state x="349" y="152" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1576063335230" />
     <state x="550" y="309" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575947453929">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

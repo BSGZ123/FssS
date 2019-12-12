@@ -287,8 +287,8 @@ public class FileServiceImpl implements IFileService {
                 try {
                     multipartFile.transferTo(new java.io.File(localUrl));
                     logger.info("local url of upload file: " + localUrl);
-                    File file = new File(name, suffix, localUrl, visitUrl, WebUtils.scriptFilter(description),
-                            WebUtils.scriptFilter(tag), user.getId(), categoryId);
+                    File file = new File(name, suffix, localUrl, visitUrl,NetUtils.scriptFilter(description),
+                            NetUtils.scriptFilter(tag), user.getId(), categoryId);
                     int[] auth = SettingConfig.getAuth(ConfigConsts.FILE_DEFAULT_AUTH_OF_SETTING);
                     file.setAuth(auth[0], auth[1], auth[2], auth[3], auth[4]);
                     boolean isSuccess = fileDAO.insertFile(file);
