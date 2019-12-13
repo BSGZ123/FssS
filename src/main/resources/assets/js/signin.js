@@ -144,7 +144,7 @@ function submit() {
 $(document).ready(
     function () {
         $("#username").keyup(function () {
-                var username = event.srcElement.value;
+                var username = event.target.value;
                 if (username.match(userConfig.usernameMatch.pattern)) {
                     $.get("/user/username/exists", {username: username}, function (data) {
                         var json = JSON.parse(data);
@@ -157,7 +157,7 @@ $(document).ready(
             }
         );
         $(".email").keyup(function () {
-            var email = event.srcElement.value;
+            var email = event.target.value;
             if (isEmail(email)) {
                 if (location.hash === "#register") {
                     $.get("/user/email/exists", {email: email}, function (data) {
@@ -171,7 +171,7 @@ $(document).ready(
             }
         });
         $(".password").keyup(function () {
-            var len = event.srcElement.value.length;
+            var len = event.target.value.length;
             if (len >= userConfig.password.minLength && len <= userConfig.password.maxLength) {
                 signinItem.passwordVerify = "";
             } else {
@@ -179,16 +179,16 @@ $(document).ready(
             }
         });
         $(".confirm-password").keyup(function () {
-            var ele = event.srcElement;
+            var ele = event.target;
             signinItem.passwordConfirm = (ele.value === $(ele).siblings(".password").val()) ? "" : "两次输入的密码不一样";
         });
         $(".sendVerifyCode").click(function () {
-            var eventSrc = event.srcElement;
+            var eventSrc = event.target;
             console.info("test");
             sendVerifyCode($(eventSrc).parents(location.hash + "-div").find(".email").val(), eventSrc);
         });
         $(".email-verify-code").keyup(function () {
-            var code = event.srcElement.value;
+            var code = event.target.value;
             if (code.length === 6) {
                 $.ajax({
                     url: "/common/" + code + "/verification", type: "PUT", success: function (data) {

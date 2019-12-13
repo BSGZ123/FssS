@@ -158,7 +158,7 @@ $(document).ready(function () {
         getResource(getOrderBy());
     });
     $(".email-verify-code").keyup(function () {
-        var code = event.srcElement.value;
+        var code = event.target.value;
         if (code.length === 6) {
             $.ajax({
                 url: "/common/" + code + "/verification", type: "PUT", success: function (data) {
@@ -171,10 +171,10 @@ $(document).ready(function () {
         }
     });
     $(".email").keyup(function () {
-        checkEmailChange(event.srcElement.value);
+        checkEmailChange(event.target.value);
     });
     $(".password").keyup(function () {
-        var len = event.srcElement.value.length;
+        var len = event.target.value.length;
         if (len >= userConfig.password.minLength && len <= userConfig.password.maxLength) {
             app.passwordVerify = "";
         } else {
@@ -182,16 +182,16 @@ $(document).ready(function () {
         }
     });
     $(".confirm-password").keyup(function () {
-        app.passwordConfirm = (event.srcElement.value === $("#new-password").val()) ? "" : "两次输入的密码不一样";
+        app.passwordConfirm = (event.target.value === $("#new-password").val()) ? "" : "两次输入的密码不一样";
     });
     $(".sendVerifyCode").click(function () {
-        sendVerifyCode($("#email").val(), event.srcElement);
+        sendVerifyCode($("#email").val(), event.target);
     });
 
     $("a.nav-link[href='" + location.hash + "-tab']").click();
     getTabContent(location.hash);
     $(".nav-link").click(function () {
-        getTabContent($(event.srcElement).attr("href"));
+        getTabContent($(event.target).attr("href"));
     });
 });
 
@@ -325,7 +325,7 @@ function setResources(resources, tabId) {   //这个函数用于填充页面数�
 var srcContentBox;
 
 function editFile() {
-    var contentBox = $(event.srcElement).parents(".content-box");
+    var contentBox = $(event.target).parents(".content-box");
     srcContentBox = contentBox;
     $("#edit-file-id").val($(contentBox).attr("data-id"));
     $("#edit-file-name").val($(contentBox).find("a.visit-url").text());
@@ -336,7 +336,7 @@ function editFile() {
 }
 
 function viewFile() {
-    var contentBox = $(event.srcElement).parents(".content-box");
+    var contentBox = $(event.target).parents(".content-box");
     srcContentBox = contentBox;
     // alerts($(contentBox).find("a.visit-url").attr('href'));
     var fileUrl='http://localhost:8080'+$(contentBox).find("a.visit-url").attr('href');
@@ -398,10 +398,10 @@ function saveFileInfo() {
 }
 
 function removeFile() {
-    var contentBox = $(event.srcElement).parents(".content-box");
+    var contentBox = $(event.target).parents(".content-box");
     layer.confirm('是否确定删除文件【' + $(contentBox).find("a.visit-url").text() + '】', {
-        btn: ['确定', '删除'],
-        skin: 'layui-layer-molv'
+        btn: ['确定', '取消'],
+        skin: 'layui-layer-lan'
     }, function () {
         var id = $(contentBox).attr("data-id");
         layer.load(1);

@@ -278,7 +278,7 @@ function getCategory() {
 }
 
 function deleteCategory() {
-    var srcTr = $(event.srcElement).parents("tr");
+    var srcTr = $(event.target).parents("tr");
     var categoryId = $(srcTr).children("td.category-id").text();
     $.ajax({
         url: "/category/" + categoryId, type: "DELETE", success: function (data) {
@@ -475,7 +475,7 @@ function saveCategory() {
 }
 
 function toggleRowSelectedStatus(ele) {
-    if (event.srcElement.toString() === "[object HTMLTableCellElement]") {
+    if (event.target.toString() === "[object HTMLTableCellElement]") {
         var cb = $(ele).find("input[type='checkbox']")[0];
         cb.checked = !cb.checked;
     }
@@ -496,7 +496,7 @@ function addToSelectedServerFile(json) {
 }
 
 function selectServerFile() {
-    var json = app.serverFiles[$(event.srcElement).parent().attr("data-key")];
+    var json = app.serverFiles[$(event.target).parent().attr("data-key")];
     if (json.isDirectory) {
         /** @namespace json.absolutePath */
         $("#select-url").val(json.absolutePath);
@@ -507,7 +507,7 @@ function selectServerFile() {
 }
 
 function removeSelectedServerFile() {
-    var liEle = $(event.srcElement).parent();
+    var liEle = $(event.target).parent();
     var key = $(liEle).attr("data-key");
     app.selectedServerFiles.splice(key, 1);
     $(liEle).remove();
