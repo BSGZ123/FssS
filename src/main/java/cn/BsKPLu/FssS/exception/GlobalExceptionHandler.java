@@ -22,12 +22,15 @@ public class GlobalExceptionHandler implements HandlerExceptionResolver {
     public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler,
                                          Exception ex) {
         ModelAndView mv = new ModelAndView();
+
         FastJsonJsonView view = new FastJsonJsonView();
         Map<String, Object> attributes = new HashMap<>(ValueConsts.TWO_INT);
         attributes.put("code", "502");
         attributes.put("message", ex.getMessage());
+
         String queryString = request.getQueryString();
         attributes.put("url", request.getRequestURI() + (Checker.isEmpty(queryString) ? "" : "?" + queryString));
+
         view.setAttributesMap(attributes);
         mv.setView(view);
         mv.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
