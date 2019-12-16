@@ -194,7 +194,7 @@ $(document).ready(function () {
         getTabContent($(event.target).attr("href"));
     });
 });
-
+//我们是使用ajax一个页面实现所以事务，需要判断用户所在的连接，打开相应的事务模块
 function getTabContent(href) {
     if (href.startsWith("uploaded", 1)) {
         offset = 0;
@@ -204,10 +204,14 @@ function getTabContent(href) {
         offset = 0;
         window.location.hash = "downloaded";
         getUserDownloaded();
+    } else if (href.startsWith("private",1)){
+        offset=0;
+        window.location.hash = "private";
+        getUserPrivate(); //没写完呢
     } else if (href.startsWith("bio", 1)) {
         window.location.hash = "bio";
         getUserInfo();
-    } else {
+    }else {
         offset = 0;
         window.location.hash = "resource";
         getResource("");
@@ -268,7 +272,10 @@ function getUserUploaded() {   //获取用户自有上传的文件记录
         }
     });
 }
-
+function getUserPrivate() {
+    //currentTab = "#private-content";
+    alert("私有前端测试成功！");
+}
 function getResource(orderBy) {  //获取所有目前公开的资源文件
     currentTab = "#resources-content";
     layer.load(1);
