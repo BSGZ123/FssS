@@ -18,6 +18,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -69,6 +70,15 @@ public class FileController {
         return Formatter.listToJson(fileService.listUserUploaded(user.getId(), offset, search));
     }
 
+    //私有文件查询
+    @ApiOperation(value = "获取我的私有文件")
+    @ApiImplicitParam(name = "offset",value = "偏移量",required = true)
+    @AuthInterceptor(InterceptorLevel.USER)
+    @RequestMapping(value = "/user/private", method = RequestMethod.GET)
+    public String getUserPrivate(int offset){
+
+        return "666";
+    }
     @ApiOperation(value = "文件上传")
     @ApiImplicitParams({@ApiImplicitParam(name = "categoryId", value = "分类ID", required = true), @ApiImplicitParam
             (name = "tag", value = "文件标签"), @ApiImplicitParam(name = "description", value = "文件描述"),
