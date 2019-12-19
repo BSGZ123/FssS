@@ -272,9 +272,20 @@ function getUserUploaded() {   //获取用户自有上传的文件记录
         }
     });
 }
+//私有文件获取
 function getUserPrivate() {
-    //currentTab = "#private-content";
-    alert("私有前端测试成功！");
+    currentTab = "#private-content";
+    layer.load(1);
+    $.get("/file/user/private",{offest: offset},function (data) {
+        layer.closeAll();
+        try {
+            setResources(JSON.parse(data),currentTab);
+            alert("私有前端测试成功！");
+        }catch (e) {
+            window.location.href = "signin";
+        }
+    });
+
 }
 function getResource(orderBy) {  //获取所有目前公开的资源文件
     currentTab = "#resources-content";
