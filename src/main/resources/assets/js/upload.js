@@ -1,5 +1,7 @@
 $("#file-input").fileinput({
+    theme :'zh',
     uploadUrl: "/file",
+    language :'zh',
     uploadAsync: true,
     maxFileCount: 100,
     previewFileType: ['image', 'html', 'text', 'video', 'audio', 'flash'],
