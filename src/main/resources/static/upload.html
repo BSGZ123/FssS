@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <link rel="shortcut icon" href="/assets/img/FssS-favicon.png"/>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/pretty-checkbox.min.css">
     <link rel="stylesheet" href="/assets/css/fileinput.min.css">
     <link rel="stylesheet" href="/assets/css/glyphicons.css">
     <script src="/assets/js/popper.min.js"></script>
@@ -36,10 +38,19 @@
                                 <option value="0">未分类</option>
                             </select>
                         </div>
-                        <div class="col-sm-9 col-7">
+                        <div class="col-sm-7 col-7">
                             <input class="form-control w-100" title="标签" type="text" id="tag"
                                    placeholder="文件标签，多个标签用空格分隔"/>
                         </div>
+                        <div class="pretty p-switch p-fill">
+                            <input type="checkbox" />
+                            <div class="state">
+                                <label>私有文件</label>
+                            </div>
+                        </div>
+<!--                        <div class="custom-checkbox col-sm-2 col-2">-->
+<!--                            <label><input type="checkbox" value="">是否私有文件</label>-->
+<!--                        </div>-->
                     </div>
                     <br/>
                 </div>
