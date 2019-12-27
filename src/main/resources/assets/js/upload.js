@@ -39,3 +39,11 @@ $.get("/category/all", function (data) {
         $("#category-id").html(option);
     }
 });
+
+function checkPrivate() {
+    if($("#private").get(0).checked) {
+        alert('私有哦！');
+    }else{
+        alert('不私有哦！')
+    }
+}
