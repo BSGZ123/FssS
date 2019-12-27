@@ -10,7 +10,8 @@ $("#file-input").fileinput({
             categoryId: $("#category-id").val(),
             tag: $("#tag").val(),
             description: $("#description").val(),
-            prefix: getQuery("prefix")
+            prefix: getQuery("prefix"),
+            private: $("#private").get(0).checked
         };
     },
     maxFilePreviewSize: 51200
@@ -40,10 +41,13 @@ $.get("/category/all", function (data) {
     }
 });
 
+//私有文件功能测试函数
 function checkPrivate() {
     if($("#private").get(0).checked) {
         alert('私有哦！');
+        console.log($("#private").get(0).checked);
     }else{
         alert('不私有哦！')
+        console.log($("#private").get(0).checked);
     }
 }
