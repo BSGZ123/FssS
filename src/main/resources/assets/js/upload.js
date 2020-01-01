@@ -11,7 +11,7 @@ $("#file-input").fileinput({
             tag: $("#tag").val(),
             description: $("#description").val(),
             prefix: getQuery("prefix"),
-            private: $("#private").get(0).checked
+            privates: $("#private").get(0).checked
         };
     },
     maxFilePreviewSize: 51200

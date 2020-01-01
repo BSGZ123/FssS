@@ -82,12 +82,14 @@ public class FileController {
     @ApiOperation(value = "文件上传")
     @ApiImplicitParams({@ApiImplicitParam(name = "categoryId", value = "分类ID", required = true), @ApiImplicitParam
             (name = "tag", value = "文件标签"), @ApiImplicitParam(name = "description", value = "文件描述"),
-            @ApiImplicitParam(name = "prefix", value = "文件前缀（仅适用于管理员上传文件，普通用户无效）")})
+            @ApiImplicitParam(name = "prefix", value = "文件前缀（仅适用于管理员上传文件，普通用户无效）"),@ApiImplicitParam(
+                    name= "private",value = "文件私有选项（拥有基本权限的用户都可以选中）")})
     @AuthInterceptor(InterceptorLevel.USER)
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String upload(int categoryId, String tag, String description, String prefix, @RequestParam("file")
+    public String upload(int categoryId, String tag, String description, String prefix,String privates,@RequestParam("file")
             MultipartFile multipartFile) {
         User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
+        //System.out.println(privates);
         return ControllerUtils.getResponse(fileService.upload(categoryId, tag, description, prefix, multipartFile,
                 user));
     }
