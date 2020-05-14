@@ -75,7 +75,7 @@ public class UserServiceImpl implements IUserService {
             if (Checker.isNotEmpty(token) && FssSApplication.tokens.containsKey(token)) {
                 user = userDAO.getUserById(FssSApplication.tokens.get(token));
                 if (Checker.isNotNull(response)) {
-                    Cookie cookie = new Cookie(ValueConsts.TOKEN_STRING, TokenConfig.generateToken(token, user.getId
+                    Cookie cookie = new Cookie(ValueConsts.TOKEN_STRING, TokenConfig.createToken(token, user.getId
                             ()));
                     cookie.setMaxAge(30 * 24 * 60 * 60);
                     response.addCookie(cookie);

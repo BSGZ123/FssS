@@ -6,12 +6,13 @@ import cn.BsKPLu.FssS.enums.InterceptorLevel;
 import cn.BsKPLu.FssS.modules.constant.ConfigConsts;
 import cn.BsKPLu.FssS.modules.constant.DefaultValues;
 import cn.BsKPLu.FssS.service.IUserService;
+import cn.BsKPLu.FssS.util.Constants;
 import cn.BsKPLu.FssS.util.ControllerUtils;
+import cn.BsKPLu.FssS.util.StringConstant;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import cn.BsKPLu.FssS.FssSApplication;
 import cn.BsKPLu.FssS.annotation.AuthInterceptor;
-import com.zhazhapan.modules.constant.ValueConsts;
 import com.zhazhapan.util.Checker;
 import com.zhazhapan.util.Formatter;
 import com.zhazhapan.util.encryption.JavaEncrypt;
@@ -26,12 +27,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * @author pantao
- * @since 2018/1/22
+ * @author BsKPLu
+ * @since 2020/1/22
  */
 @RestController
 @RequestMapping("/user")
@@ -55,13 +57,14 @@ public class UserController {
     @AuthInterceptor(InterceptorLevel.ADMIN)
     @RequestMapping(value = "/{id}/{permission}", method = RequestMethod.PUT)
     public String updatePermission(@PathVariable("id") int id, @PathVariable("permission") int permission) {
-        User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
-        if (user.getPermission() < ValueConsts.THREE_INT && permission > 1) {
-            jsonObject.put("message", "权限不够，设置失败");
+        User user;//创建User
+        user = (User) request.getSession().getAttribute(StringConstant.STRING_SESSION_USER);//获取session中字段user数据
+        if (user.getPermission() < 3 && permission > 1) {//用户身份：0不允许登录，1普通用户，2管理员用户
+            jsonObject.put(StringConstant.STRING_MESSAGE, "权限不够，设置失败");
         } else if (userService.updatePermission(id, permission)) {
-            jsonObject.put("message", "更新成功");
+            jsonObject.put(StringConstant.STRING_MESSAGE, "更新成功");
         } else {
-            jsonObject.put("message", "更新失败，请稍后重新尝试");
+            jsonObject.put(StringConstant.STRING_MESSAGE, "更新失败，请稍后重新尝试");
         }
         return jsonObject.toJSONString();
     }
@@ -87,7 +90,7 @@ public class UserController {
     @AuthInterceptor(InterceptorLevel.ADMIN)
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public String getUser(String user, int offset) {
-        User u = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
+        User u = (User) request.getSession().getAttribute(Constants.USER_STRING);
         return Formatter.listToJson(userService.listUser(u.getPermission(), user, offset));
     }
 
@@ -98,7 +101,7 @@ public class UserController {
     @AuthInterceptor(InterceptorLevel.USER)
     @RequestMapping(value = "/info", method = RequestMethod.PUT)
     public String updateBasicInfo(String avatar, String realName, String email, String code) {
-        User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
+        User user = (User) request.getSession().getAttribute(Constants.USER_STRING);
         jsonObject.put("message", "保存成功");
         boolean emilVerify = FssSApplication.settings.getBooleanUseEval(ConfigConsts.EMAIL_VERIFY_OF_SETTINGS);
         if (Checker.isNotEmpty(email) && !email.equals(user.getEmail())) {
@@ -129,7 +132,7 @@ public class UserController {
     @AuthInterceptor(InterceptorLevel.USER)
     @RequestMapping(value = "/password", method = RequestMethod.PUT)
     public String updatePassword(String oldPassword, String newPassword) {
-        User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
+        User user = (User) request.getSession().getAttribute(Constants.USER_STRING);
         jsonObject.put("status", "error");
         try {
             if (user.getPassword().equals(JavaEncrypt.sha256(oldPassword))) {
@@ -152,11 +155,12 @@ public class UserController {
     @AuthInterceptor(InterceptorLevel.USER)
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     public String getInfo() {
-        User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
-        JSONObject object = JSON.parseObject(user.toString());
-        object.remove(ValueConsts.ID_STRING);
-        object.remove(ValueConsts.PASSWORD_STRING);
-        return object.toString();
+        User user;//创建user对象
+        user = (User) request.getSession().getAttribute(StringConstant.STRING_SESSION_USER);//获取Session中字段user的数据
+        JSONObject obj = JSON.parseObject(user.toString());//将user数据转换String，存入map集合中，方便下面脱敏
+        obj.remove(StringConstant.STRING_USER_ID);//map集合移除key值为用户id
+        obj.remove(StringConstant.STRING_USER_PASSWORD);//map集合移除key值为用户password
+        return obj.toString();
     }
 
     @ApiOperation(value = "登录（用户名密码和token必须有一个输入）")
@@ -165,18 +169,22 @@ public class UserController {
             @ApiImplicitParam(name = "token", value = "用于自动登录")})
     @AuthInterceptor(InterceptorLevel.NONE)
     @RequestMapping(value = "/login", method = RequestMethod.PUT)
-    public String login(String username, String password, boolean auto, String token) {
-        //使用密码登录
-        User user = userService.login(username, password, ValueConsts.NULL_STRING, ValueConsts.NULL_RESPONSE);
-        if (Checker.isNull(user) || user.getPermission() < 1) {
-            jsonObject.put("status", "failed");
+    public String login(String username, String password, boolean aloin, String token) {
+        //密码登录，停用token自动登录
+        User user;//声明User
+        user=userService.login(username, password, StringConstant.STRING_NULL,Constants.NULL_RESPONSE);//后端传递参数查询数据库
+        Boolean isNull=Checker.isNull(user);//判断账户是否空
+        Boolean isPermission=user.getPermission() < 1;//判断用户身份
+        if (isNull || isPermission) {
+            jsonObject.put(StringConstant.STRING_LOGIN_STATE,StringConstant.STRING_LOGIN_FAILURE);
         } else {
-            request.getSession().setAttribute(ValueConsts.USER_STRING, user);
-            jsonObject.put("status", "success");
-            if (auto) {
-                jsonObject.put("token", TokenConfig.generateToken(token, user.getId()));
+            request.getSession().setAttribute(StringConstant.STRING_SESSION_USER, user);//设定全局变量
+            jsonObject.put(StringConstant.STRING_LOGIN_STATE, StringConstant.STRING_LOGIN_SUCCESS);//推入成功数据
+            if (aloin) {//判断是否自动登录
+                String tmpToken=TokenConfig.createToken(token, user.getId());//生成token
+                jsonObject.put(StringConstant.STRING_LOGIN_TOKEN,tmpToken);//推入token数据
             } else {
-                jsonObject.put("token", "");
+                jsonObject.put(StringConstant.STRING_LOGIN_TOKEN,StringConstant.STRING_NULL);
                 TokenConfig.removeTokenByValue(user.getId());
             }
         }

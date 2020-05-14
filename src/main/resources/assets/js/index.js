@@ -341,7 +341,6 @@ function setResources(resources, tabId) {   //这个函数用于填充页面数�
 }
 
 var srcContentBox;
-
 function editFile() {
     var contentBox = $(event.target).parents(".content-box");
     srcContentBox = contentBox;

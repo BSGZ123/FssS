@@ -4,6 +4,8 @@ import cn.BsKPLu.FssS.enums.InterceptorLevel;
 import cn.BsKPLu.FssS.service.IAuthService;
 import cn.BsKPLu.FssS.util.ControllerUtils;
 import cn.BsKPLu.FssS.annotation.AuthInterceptor;
+import cn.BsKPLu.FssS.util.StringConstant;
+import com.alibaba.fastjson.JSONObject;
 import com.zhazhapan.util.Formatter;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -54,7 +56,14 @@ public class AuthController {
     @AuthInterceptor(InterceptorLevel.ADMIN)
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public String updateAuth(@PathVariable("id") long id, String auth) {
-        return ControllerUtils.getResponse(authService.updateAuth(id, auth));
+        Boolean updateResult=authService.updateAuth(id, auth);//获取更新操作的结果
+        JSONObject jsonObject = new JSONObject();
+        if (updateResult) {
+            jsonObject.put(StringConstant.STRING_STATE,StringConstant.STRING_SUCCESS);
+        } else {
+            jsonObject.put(StringConstant.STRING_STATE,StringConstant.STRING_ERROR_STATE);
+        }
+        return jsonObject.toString();
     }
 
     @ApiOperation(value = "批量删除权限记录")

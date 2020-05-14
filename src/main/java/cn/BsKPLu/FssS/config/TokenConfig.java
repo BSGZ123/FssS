@@ -23,14 +23,14 @@ public class TokenConfig {
 
     private static Logger logger = LoggerFactory.getLogger(TokenConfig.class);
 
-    public static String generateToken(String token, int userId) {
+    public static String createToken(String token, int userId) {
         if (Checker.isNotEmpty(token)) {
             FssSApplication.tokens.remove(token);
         }
-        return generateToken(userId);
+        return createToken(userId);
     }
 
-    public static String generateToken(int userId) {
+    public static String createToken(int userId) {
         String token = RandomUtils.getRandomStringOnlyLetter(ValueConsts.THIRTY_TWO_INT);
         FssSApplication.tokens.put(token, userId);
         saveToken();

@@ -5,6 +5,8 @@ import cn.BsKPLu.FssS.enums.InterceptorLevel;
 import cn.BsKPLu.FssS.service.ICategoryService;
 import cn.BsKPLu.FssS.util.ControllerUtils;
 import cn.BsKPLu.FssS.annotation.AuthInterceptor;
+import cn.BsKPLu.FssS.util.StringConstant;
+import com.alibaba.fastjson.JSONObject;
 import com.zhazhapan.modules.constant.ValueConsts;
 import com.zhazhapan.util.Checker;
 import com.zhazhapan.util.Formatter;
@@ -35,7 +37,14 @@ public class CategoryController {
     @AuthInterceptor(InterceptorLevel.ADMIN)
     @RequestMapping(value = "/{name}", method = RequestMethod.POST)
     public String add(@PathVariable("name") String name) {
-        return ControllerUtils.getResponse(categoryService.insert(name));
+        Boolean insertResult=categoryService.insert(name);
+        JSONObject jsonObject = new JSONObject();
+        if (insertResult) {
+            jsonObject.put(StringConstant.STRING_STATE,StringConstant.STRING_SUCCESS);
+        } else {
+            jsonObject.put(StringConstant.STRING_STATE,StringConstant.STRING_ERROR_STATE);
+        }
+        return jsonObject.toString();
     }
 
     @ApiOperation(value = "更新分类名称")

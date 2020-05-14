@@ -4,7 +4,9 @@ import cn.BsKPLu.FssS.entity.User;
 import cn.BsKPLu.FssS.enums.InterceptorLevel;
 import cn.BsKPLu.FssS.modules.constant.ConfigConsts;
 import cn.BsKPLu.FssS.service.IFileService;
+import cn.BsKPLu.FssS.util.Constants;
 import cn.BsKPLu.FssS.util.ControllerUtils;
+import cn.BsKPLu.FssS.util.StringConstant;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import cn.BsKPLu.FssS.FssSApplication;
@@ -18,7 +20,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,6 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author BsKPLu
@@ -56,8 +58,11 @@ public class FileController {
     @AuthInterceptor(InterceptorLevel.USER)
     @RequestMapping(value = "/user/downloaded", method = RequestMethod.GET)
     public String getUserDownloaded(int offset, String search) {
-        User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
-        return Formatter.listToJson(fileService.listUserDownloaded(user.getId(), offset, search));
+        User user;//创建User
+        user = (User) request.getSession().getAttribute(StringConstant.STRING_SESSION_USER);
+        int userId=user.getId();//获取用户id
+        List list=fileService.listUserDownloaded(userId, offset, search);//list集合获取下载数据
+        return Formatter.listToJson(list);
     }
 
     @ApiOperation(value = "获取我的上传记录")
@@ -66,7 +71,7 @@ public class FileController {
     @AuthInterceptor(InterceptorLevel.USER)
     @RequestMapping(value = "/user/uploaded", method = RequestMethod.GET)
     public String getUserUploaded(int offset, String search) {
-        User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
+        User user = (User) request.getSession().getAttribute(Constants.USER_STRING);
         return Formatter.listToJson(fileService.listUserUploaded(user.getId(), offset, search));
     }
 
@@ -87,11 +92,17 @@ public class FileController {
     @AuthInterceptor(InterceptorLevel.USER)
     @RequestMapping(value = "", method = RequestMethod.POST)
     public String upload(int categoryId, String tag, String description, String prefix,String privates,@RequestParam("file")
-            MultipartFile multipartFile) {
-        User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
-        //System.out.println(privates);
-        return ControllerUtils.getResponse(fileService.upload(categoryId, tag, description, prefix, multipartFile,
-                user));
+            MultipartFile mFile) {
+        User user = (User) request.getSession().getAttribute(StringConstant.STRING_SESSION_USER);
+        //System.out.println(privates);新功能测试
+        JSONObject jsonObject = new JSONObject();
+        Boolean isYes=fileService.upload(categoryId, tag, description, prefix, mFile, user);
+        if (isYes) {
+            jsonObject.put(StringConstant.STRING_STATE,StringConstant.STRING_SUCCESS);
+        } else {
+            jsonObject.put(StringConstant.STRING_STATE,StringConstant.STRING_ERROR_STATE);
+        }
+        return jsonObject.toString();
     }
 
     @ApiOperation(value = "获取文件记录")
@@ -101,14 +112,16 @@ public class FileController {
     @AuthInterceptor(InterceptorLevel.NONE)
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public String getAll(int offset, int categoryId, String orderBy, String search) {
-        User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
-        boolean canGet = FssSApplication.settings.getBooleanUseEval(ConfigConsts.ANONYMOUS_VISIBLE_OF_SETTING) ||
-                (Checker.isNotNull(user) && user.getIsVisible() == 1);
+        User user;
+        user = (User) request.getSession().getAttribute(StringConstant.STRING_SESSION_USER);
+        boolean canGet = FssSApplication.settings.getBooleanUseEval(StringConstant.ANONYMOUS_VISIBLE_SETTING) ||
+                (Checker.isNotNull(user) && user.getIsVisible() == 1);//获取设置，判断用户存在以及对应权限
         if (canGet) {
             int userId = Checker.isNull(user) ? 0 : user.getId();
-            return Formatter.listToJson(fileService.listAll(userId, offset, categoryId, orderBy, search));
+            List list=fileService.listAll(userId, offset, categoryId, orderBy, search);
+            return Formatter.listToJson(list);
         } else {
-            jsonObject.put("error", "权限被限制，无法获取资源，请联系管理员");
+            jsonObject.put(StringConstant.STRING_ERROR_STATE,StringConstant.STRING_MESSAGE_NOT_VISIBLE_FAILURE);
             return jsonObject.toString();
         }
     }
@@ -117,7 +130,7 @@ public class FileController {
     @AuthInterceptor(InterceptorLevel.USER)
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public String removeFile(@PathVariable("id") long id) {
-        User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
+        User user = (User) request.getSession().getAttribute(Constants.USER_STRING);
         jsonObject.put("status", "error");
         if (Checker.isNull(user)) {
             jsonObject.put("message", "请先登录");
@@ -139,12 +152,14 @@ public class FileController {
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public String updateFileInfo(@PathVariable("id") long id, String name, String category, String tag, String
             description) {
-        User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
-        jsonObject.put("status", "error");
-        if (fileService.updateFileInfo(id, user, name, category, tag, description)) {
-            jsonObject.put("status", "success");
+        User user;
+        user = (User) request.getSession().getAttribute(StringConstant.STRING_SESSION_USER);//获取Session中的字段User数据
+        Boolean canUpdate=fileService.updateFileInfo(id, user, name, category, tag, description);//提交数据获得更新结果
+        jsonObject.put(StringConstant.STRING_LOGIN_STATE,StringConstant.STRING_ERROR_STATE);
+        if (canUpdate) {
+            jsonObject.put(StringConstant.STRING_STATE,StringConstant.STRING_UPDATE_SUCCESS);
         } else {
-            jsonObject.put("message", "格式不正确或权限不够，更新失败，请联系管理员");
+            jsonObject.put(StringConstant.STRING_MESSAGE, StringConstant.STRING_MESSAGE_NOT_UPDATE_FAILURE);
         }
         return jsonObject.toString();
     }
@@ -180,7 +195,7 @@ public class FileController {
     @AuthInterceptor(InterceptorLevel.ADMIN)
     @RequestMapping(value = "/server/share", method = RequestMethod.POST)
     public String shareFile(String prefix, String files) {
-        User user = (User) request.getSession().getAttribute(ValueConsts.USER_STRING);
+        User user = (User) request.getSession().getAttribute(Constants.USER_STRING);
         return ControllerUtils.getResponse(fileService.shareFiles(Checker.checkNull(prefix), files, user));
     }
 
@@ -190,9 +205,10 @@ public class FileController {
     @AuthInterceptor(InterceptorLevel.ADMIN)
     @RequestMapping(value = "/{id}/url", method = RequestMethod.PUT)//@PathVariable注解 用于将前端传来的数据绑定在连接地址中
     public String uploadFileUrl(@PathVariable("id") int id, String oldLocalUrl, String localUrl, String visitUrl) {
-        boolean[] b = fileService.updateUrl(id, oldLocalUrl, localUrl, visitUrl);
-        String responseJson = "{status:{localUrl:" + b[0] + ",visitUrl:" + b[1] + "}}";
-        return Formatter.formatJson(responseJson);
+        boolean result [] = fileService.updateUrl(id, oldLocalUrl, localUrl, visitUrl);
+        String responseJsonDate = "{"+StringConstant.STRING_STATE+":{localUrl:" + result[0] + ",visitUrl:" + result[1] + "}}";
+        //拼凑返回给前端的结果字符串
+        return Formatter.formatJson(responseJsonDate);
     }
 
     @ApiOperation(value = "批量删除文件")
@@ -227,7 +243,7 @@ public class FileController {
     @RequestMapping(value = "/**", method = RequestMethod.GET)
     public void getResource(HttpServletResponse response) throws IOException {
         ControllerUtils.loadResource(response, fileService.getResource(request.getServletPath(), request),
-                ValueConsts.FALSE);
+                Constants.FALSE);
     }
 
     /**

@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author pantao
  * @since 2018/2/28
@@ -34,6 +36,7 @@ public class UploadedController {
     @AuthInterceptor(InterceptorLevel.ADMIN)
     @RequestMapping(value = "all", method = RequestMethod.GET)
     public String getAll(String user, String file, String category, int offset) {
-        return Formatter.listToJson(uploadedService.list(user, file, category, offset));
+        List list=uploadedService.list(user, file, category, offset);//根据用户名获取上传记录
+        return Formatter.listToJson(list);
     }
 }

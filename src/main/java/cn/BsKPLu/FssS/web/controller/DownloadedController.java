@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author pantao
  * @since 2018/2/9
@@ -36,6 +38,7 @@ public class DownloadedController {
     @AuthInterceptor(InterceptorLevel.ADMIN)
     @RequestMapping(value = "all", method = RequestMethod.GET)
     public String getAll(String user, String file, String category, int offset) {
-        return Formatter.listToJson(downloadService.list(user, file, category, offset));
+        List list=downloadService.list(user, file, category, offset);//根据用户名获取下载记录
+        return Formatter.listToJson(list);
     }
 }
